@@ -1,0 +1,10 @@
+{
+  "profiles": {
+    "Lab03VäderData": {
+      "commandName": "Project"
+    },
+    "Container (Dockerfile)": {
+      "commandName": "Docker"
+    }
+  }
+}
