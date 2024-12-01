@@ -208,7 +208,7 @@ class Program
     {
         if (string.IsNullOrWhiteSpace(value))
         {
-            return null; // Returnera null om värdet är tomt eller saknas
+            return null; // Returnera null om värdet är tomt
         }
 
         // Rensa bort procenttecken om det finns
@@ -233,30 +233,6 @@ class Program
             Map(m => m.Humidity).Name("Humidity");
             Map(m => m.MoldRisk).Name("Mold Risk (%)");
             Map(m => m.Location).Name("Location");
-        }
-    }
-
-
-    // Läs och visa väderdata
-    static void ReadWeatherData()
-    {
-        using (var db = new EFContext())
-        {
-            Console.WriteLine("Reading Weather Data...");
-
-            var data = db.WeatherData.ToList();
-
-            if (data.Count > 0)
-            {
-                foreach (var record in data)
-                {
-                    Console.WriteLine($"Id: {record.Id}, Date: {record.Date}, Place: {record.Place}, Temperature: {record.Temperature}, Humidity: {record.Humidity}, MoldRisk: {record.MoldRisk}, Location: {record.Location}");
-                }
-            }
-            else
-            {
-                Console.WriteLine("No records found.");
-            }
         }
     }
 }
